@@ -1,28 +1,28 @@
 version: '3'
 services:
-  nginx-client1:
+  nginx-client11:
     image: nginx:1.17.8
     volumes:
       - ./client
       - ./docker/nginx-client.conf:/etc/nginx/conf.d/nginx-client.conf
     networks:
       net:
-        ipv4_address: 192.168.236.2
-  nginx-server1:
+        ipv4_address: 192.168.237.2
+  nginx-server11:
     image: nginx:1.17.8
     volumes:
       - ./server
       - ./docker/nginx-server.conf:/etc/nginx/conf.d/nginx-server.conf
     networks:
       net:
-        ipv4_address: 192.168.236.3
-  node-server1:
+        ipv4_address: 192.168.237.3
+  node-server11:
     image: node:16.20.2
     volumes:
       - ./server
     networks:
       net:
-        ipv4_address: 192.168.236.4
+        ipv4_address: 192.168.237.4
 networks:
   net:
     driver: bridge
