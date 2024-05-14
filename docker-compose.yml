@@ -3,7 +3,7 @@ services:
   nginx-client11:
     image: nginx:1.17.8
     volumes:
-      - ./client
+      - ./code
       - ./docker/nginx-client.conf:/etc/nginx/conf.d/nginx-client.conf
     networks:
       net:
@@ -11,7 +11,7 @@ services:
   nginx-server11:
     image: nginx:1.17.8
     volumes:
-      - ./server
+      - ./code
       - ./docker/nginx-server.conf:/etc/nginx/conf.d/nginx-server.conf
     networks:
       net:
@@ -19,7 +19,7 @@ services:
   node-server11:
     image: node:16.20.2
     volumes:
-      - ./server
+      - ./code
     networks:
       net:
         ipv4_address: 192.168.237.4
